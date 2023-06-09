@@ -1,0 +1,107 @@
+---
+// export interface Props {
+// 	title: string;
+// 	body: string;
+// 	date: string;
+// 	href: string;
+// }
+
+// const { href, title, body, date } = Astro.props;
+---
+
+
+
+
+<button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 neon-sidebar">
+    <span class="sr-only">Open sidebar</span>
+    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+    </svg>
+</button>
+
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 neon-sidebar" aria-label="Sidebar">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-black-50 dark:bg-gray-800">
+       <ul class="space-y-2 font-medium">
+          <li>
+             <a href="#main" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 neon-sidebar">
+               <i class="fa-sharp fa-light fa-phone-rotary"></i>                
+               <span class="ml-3">Dashboard</span>
+             </a>
+            </li>
+          <li>
+             <a href="#skills" class="flex items-center p-2 text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 neon-sidebar">
+                <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M14 3h6v14h-6V3zM4 5h6v10H4V5z"></path></svg>
+                <span class="ml-3">Skills</span>
+             </a>
+          </li>
+          <li>
+             <a href="#projects" class="flex items-center p-2 text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 neon-sidebar">
+                <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 4v2H4a2 2 0 00-2 2v5a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zM4 8h12v5H4V8z"></path></svg>
+                <span class="ml-3">Projects</span>
+             </a>
+          </li>
+          <li>
+             <a href="#contact" class="flex items-center p-2 text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 neon-sidebar">
+                <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M14 4v5l2.5 1.5L19 9V4h-5zM7 4v5l2.5 1.5L12 9V4H7zM2 4v12h5v-4h6v4h5V4H2zm2 2h11v8H4V6z"></path></svg>
+                <span class="ml-3">Contact</span>
+             </a>
+          </li>
+       </ul>
+    </div>
+</aside>
+
+
+ 
+ 
+<style>
+   @font-face {
+  font-family: "NeonRetro";
+  src: url(/assets/fonts/NeonRetro.otf);
+  }
+
+  body {
+  
+  color: #ffffff;
+  font-family: 'NeonRetro', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  overflow-y: auto;
+   }
+
+.neon-sidebar {
+  background-color: #00000071;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.astro-MUTI6TV6{
+   font-family: 'NeonRetro';
+}
+.neon-sidebar button {
+  color: #00ffd5;
+}
+
+.neon-sidebar button:hover,
+.neon-sidebar button:focus {
+  background-color: #000000;
+  color: #ff00dd;
+}
+
+.neon-sidebar a {
+  color: #00f7ff;
+}
+
+.neon-sidebar a:hover,
+.neon-sidebar a:focus {
+  background-color: #000;
+  color: #ff9100;
+}
+
+#default-sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+#default-sidebar.open {
+  transform: translateX(0);
+}
+</style>
+<script></script>

@@ -1,0 +1,86 @@
+<div class="tech" id="skills">
+    <div class="react">
+        <svg class="spin-animation" viewBox="0 0 128 128">
+            <image xlink:href="./assets/React-icon.svg.png" width="128" height="128" />
+        </svg>
+    </div>
+    <div class="html">
+        <img src="./assets/html.png" alt="HTML5" width="128" height="128">
+    </div>
+    <div class="css">
+        <img src="./assets/css.png" alt="CSS3" width="128" height="128">
+    </div>
+    <div class="js">
+        <img src="./assets/js.png" alt="JavaScript" width="128" height="128">
+    </div>
+    <p>These are the skills I'm learning at the moment</p>
+    <div class="php">
+        <img src="./assets/php.png" alt="PHP" width="128" height="128">
+    </div>
+</div> 
+
+<style>
+.tech {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.react {
+    width: 10%; 
+    fill: #00ffff; /* Light blue neon/synthwave color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin-animation {
+    animation: spin 8s linear infinite;
+}
+
+.html {
+    width: 20%; 
+    fill: #00ffff; /* Light blue neon/synthwave color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.css {
+    width: 20%; 
+    fill: #00ffff; /* Light blue neon/synthwave color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.js {
+    width: 22%; 
+    fill: #00ffff; /* Light blue neon/synthwave color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.php {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40%;
+    
+}
+p
+{
+    color: #00e1ff;
+    text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc, 0 0 50px #ff00cc, 0 0 60px #ff00cc;
+}
+</style>

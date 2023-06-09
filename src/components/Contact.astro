@@ -1,0 +1,104 @@
+---
+import emailjs from "@emailjs/browser";
+---
+
+<section id="contact">
+  <div class="neon-box-container">
+    <div class="neon-box">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+        Contact me
+      </h2>
+      <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+        Passionate web developer in training, eager to bring your ideas to life. <br> 
+        I offer fresh perspectives and a commitment to quality work.<br> 
+        I prioritize user experience, crafting intuitive and visually appealing websites. <br> 
+        Available for internships, and web development opportunities.<br> 
+        Contact me today!
+      </p>
+      <div class="button-container">
+        <button type="submit" class=" w-full py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><a href="mailto:lorenzo.zanuso@epitech.eu?subject=Mail de notre site Web ">Send email</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+#contact {
+    height: 100vh;
+  }
+
+  #contact h2 {
+    color: aliceblue;
+    text-shadow: 2px 2px 8px rgba(0, 163, 225, 0.5);
+  }
+
+  #contact p {
+    color: aliceblue;
+    font-family: "Roboto", "sans-serif";
+    text-shadow: 2px 2px 8px rgba(0, 163, 225, 0.5);
+    font-size: 2rem;
+
+  }
+.neon-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: transparent;
+  
+}
+
+.neon-box {
+  background-color: transparent;
+  border: 2px solid #9f36db; /* Neon green color */
+  box-shadow: 0 0 10px #00ffff; /* Neon green color */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Adjust as needed */
+  width: 50%;
+  backdrop-filter: blur(25px) brightness(0.8);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+    background-color: #00e3e8;
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 5px #00e3e8, 0 0 10px #00e3e8, 0 0 15px #00e3e8;
+
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #00b7c0;
+    box-shadow: 0 0 5px #00b7c0, 0 0 10px #00b7c0, 0 0 15px #00b7c0;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .neon-box {
+    width: 80%; /* Adjust as needed for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-box {
+    width: 90%; /* Adjust as needed for smaller screens */
+  }
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/mailto@0.1.2/index.min.js"></script>

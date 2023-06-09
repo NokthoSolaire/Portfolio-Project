@@ -1,0 +1,149 @@
+---
+// import '../../public/assets/css/ImageSuperimpose.css'; // Import the CSS file for styling
+---
+<script>
+  let audio = new Audio('./assets/lights.mp3');
+    audio.play();
+</script>
+<style>
+  
+ @font-face {
+  font-family: "NeonRetro";
+  src: url(/assets/fonts/NeonRetro.otf);
+  }
+
+  @font-face {
+    font-family: "NEON";
+    src: url(/assets/fonts/NEON.TTF);
+  }
+
+  #name {
+    font-family: "NeonRetro", sans-serif;
+    color: #ff00cc;
+    text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc, 0 0 50px #ff00cc, 0 0 60px #ff00cc;
+    font-size: 150px;
+    position: absolute;
+    bottom: 5%;
+    /* opacity: 0; */
+  }
+
+  #diagonal-text {
+    font-family: "NEON", sans-serif;
+    text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc, 0 0 50px #ff00cc, 0 0 60px #ff00cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    right :16%;
+    color: #ff00cc;
+    width: 200px;
+    height: 200px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+  }
+
+  #diagonal-text span {
+    position: relative;
+    display: inline-block;
+    transform: rotate(45deg);
+  }
+
+  .image-superimpose-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; 
+    overflow: hidden; 
+  }
+
+  .base-image{
+    width: 1%;
+  }
+  .superimposed-image {
+    max-width: 100%;
+    height: 95vh;
+    position: absolute; /* Ajout d'une position absolue */
+    bottom: -100%; /* Position initiale en dehors de l'écran */
+    transition: bottom 2s; /* Transition de 2 secondes pour le déplacement */
+    /* opacity: 0; */
+  }
+
+  .superimposed-image.show {
+    bottom: 0; /* Nouvelle position après le délai */
+  }
+</style>
+
+<a href="dashboard" class="image-superimpose-container">
+  <img id="base-image" src="./assets/logo.png" alt="Base Image">
+  <img class="superimposed-image" src="./assets/portrait.png" alt="Superimposed Image 1">
+  <p id="name"></p>
+  <p id="diagonal-text"></p>
+</a>
+
+<script>
+  // Ajoute la classe 'show' à la deuxième image après le délai spécifié (en millisecondes)
+  setTimeout(function() {
+    let superimposedImage = document.querySelector('.superimposed-image');
+    superimposedImage.classList.add('show');
+  }, 100); // 2 secondes (2000 millisecondes) de délai initial + 2 secondes de transition
+
+
+  let count=0;
+
+  function recursive() {
+    count++;
+    document.getElementById("base-image").style.width = count + "%";
+    console.log(count);
+    if(count == 95){
+      return;
+    }
+
+    setTimeout(recursive, 10);
+  }
+
+  function neonEffect(str, opacity, delay) {
+  if (opacity >= 1) {
+    return;
+  }
+  
+  const rgba = `rgba(0, 255, 255, ${opacity})`;
+  const glow = `<span style="color: ${rgba};">${str}</span>`;
+  
+  setTimeout(() => {
+    const element = document.getElementById('name');
+    element.innerHTML = glow;
+    neonEffect(str, opacity + 0.005, delay / 20);
+  }, delay);
+  
+}
+
+
+
+  function neonEffect2(str, opacity, delay) {
+    if (opacity >= 1) {
+      return;
+    }
+  
+    const rgba2 = `rgba(0, 255, 255, ${opacity})`;
+    const glow2 = `<span style="color: ${rgba2};">${str}</span>`;
+  
+    setTimeout(() => {
+      const element2 = document.getElementById('diagonal-text');
+      element2.innerHTML = glow2;
+      neonEffect2(str, opacity + 0.005, delay / 20);
+    }, delay);
+  }
+  
+  // Example usage
+  const name = 'Lorenzo Zanuso';
+  const diagonal = 'Portfolio Edition';
+  neonEffect(name, 0, 2500);
+  neonEffect2(diagonal, 0, 3100);
+  recursive();
+
+  setTimeout(function() {
+    window.location.href = "dashboard";
+  }, 6000);
+</script>
