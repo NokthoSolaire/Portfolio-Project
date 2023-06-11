@@ -1,5 +1,7 @@
 ---
-
+import Light from './assetslights.mp3';
+import Logo from './assets/logo.png';
+import Portrait from './assets/portrait.png';
 ---
 <script>
   let audio = new Audio('./assets/images/lights.mp3');
@@ -76,8 +78,8 @@
 </style>
 
 <a href="dashboard" class="image-superimpose-container">
-  <img id="base-image" src="./assets/images/logo.png" alt="Base Image">
-  <img class="superimposed-image" src="./assets/images/portrait.png" alt="Superimposed Image 1">
+  <img id="base-image" src= {Logo} alt="Base Image">
+  <img class="superimposed-image" src= {Portrait} alt="Superimposed Image 1">
   <p id="name"></p>
   <p id="diagonal-text"></p>
 </a>
